@@ -24,25 +24,35 @@ OPENROUTER_API_KEY = os.environ.get("OPENROUTER_API_KEY", "")
 OPENROUTER_BASE = "https://openrouter.ai/api/v1"
 DEFAULT_MODEL = os.environ.get("DEFAULT_MODEL", "mistralai/mistral-small-3.1-24b-instruct")
 
-# Model alias map — lets Lyzr use familiar names that map to cheap OpenRouter models
+# All aliases route to Qwen3.5-Plus
+QWEN_TARGET = "qwen/qwen3.5-plus-02-15"
+
+# Model alias map — every known Lyzr model name maps to Qwen3.5-Plus via OpenRouter
 MODEL_ALIASES = {
-    # OpenAI aliases → cheap equivalents
-    "gpt-4o": "google/gemini-2.0-flash-001",
-    "gpt-4o-mini": "mistralai/mistral-small-3.1-24b-instruct",
-    "gpt-4-turbo": "google/gemini-2.0-flash-001",
-    "gpt-4": "google/gemini-2.0-flash-001",
-    "gpt-3.5-turbo": "mistralai/mistral-small-3.1-24b-instruct",
-    # Anthropic aliases
-    "claude-3-5-sonnet-latest": "google/gemini-2.0-flash-001",
-    "claude-3-opus-20240229": "qwen/qwq-32b",
-    "claude-3-haiku-20240307": "mistralai/mistral-small-3.1-24b-instruct",
-    "claude-opus-4-5": "qwen/qwq-32b",
-    "claude-haiku-4-5": "mistralai/mistral-small-3.1-24b-instruct",
-    # Google aliases
-    "gemini-2.0-flash": "google/gemini-2.0-flash-001",
-    "gemini-2.0-flash-exp": "google/gemini-2.0-flash-001",
-    "gemini-2.5-flash": "google/gemini-2.5-flash-preview:thinking",
-    "gemini-3-flash": "google/gemini-2.0-flash-001",
+    # OpenAI aliases → Qwen3.5-Plus
+    "gpt-4o": QWEN_TARGET,
+    "gpt-4o-mini": QWEN_TARGET,
+    "gpt-4-turbo": QWEN_TARGET,
+    "gpt-4": QWEN_TARGET,
+    "gpt-3.5-turbo": QWEN_TARGET,
+    "gpt-4o-2024-11-20": QWEN_TARGET,
+    "gpt-4o-2024-08-06": QWEN_TARGET,
+    "gpt-4o-mini-2024-07-18": QWEN_TARGET,
+    # Anthropic aliases → Qwen3.5-Plus
+    "claude-3-5-sonnet-latest": QWEN_TARGET,
+    "claude-3-5-sonnet-20241022": QWEN_TARGET,
+    "claude-3-opus-20240229": QWEN_TARGET,
+    "claude-3-haiku-20240307": QWEN_TARGET,
+    "claude-opus-4-5": QWEN_TARGET,
+    "claude-haiku-4-5": QWEN_TARGET,
+    "claude-3-5-haiku-latest": QWEN_TARGET,
+    # Google aliases → Qwen3.5-Plus
+    "gemini-2.0-flash": QWEN_TARGET,
+    "gemini-2.0-flash-exp": QWEN_TARGET,
+    "gemini-2.5-flash": QWEN_TARGET,
+    "gemini-3-flash": QWEN_TARGET,
+    "gemini-1.5-pro": QWEN_TARGET,
+    "gemini-1.5-flash": QWEN_TARGET,
 }
 
 
