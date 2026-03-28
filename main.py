@@ -25,7 +25,7 @@ OPENROUTER_BASE = "https://openrouter.ai/api/v1"
 DEFAULT_MODEL = os.environ.get("DEFAULT_MODEL", "mistralai/mistral-small-3.1-24b-instruct")
 
 # All aliases route to Qwen Plus (latest available on OpenRouter)
-QWEN_TARGET = "qwen/qwen-plus"
+QWEN_TARGET = "qwen/qwen3.5-plus-02-15"
 
 # Model alias map — every known Lyzr model name maps to Qwen Plus via OpenRouter
 MODEL_ALIASES = {
